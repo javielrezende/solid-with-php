@@ -10,7 +10,7 @@ class Video
 
     protected string $name;
 
-    protected DateInterval $duracao;
+    protected DateInterval $duration;
 
     public function __construct(string $name)
     {

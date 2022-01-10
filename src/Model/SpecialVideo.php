@@ -2,7 +2,7 @@
 
 namespace PersonalProjects\SOLID\Model;
 
-class SpecialVideo extends Video
+class SpecialVideo extends Video implements Scorable
 {
     private string $category;
 
@@ -15,5 +15,10 @@ class SpecialVideo extends Video
     public function getUrl(): string
     {
         return str_replace(' ', '-', strtolower($this->category));
+    }
+
+    public function getScore(): int
+    {
+        return $this->duration() * 2;
     }
 }
