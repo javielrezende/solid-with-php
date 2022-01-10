@@ -2,7 +2,7 @@
 
 namespace PersonalProjects\SOLID\Model;
 
-class SpecialVideo extends Video implements Scorable
+class SpecialVideo extends Video implements Scorable, Watchable
 {
     private string $category;
 

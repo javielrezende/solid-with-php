@@ -2,20 +2,12 @@
 
 namespace PersonalProjects\SOLID\Service;
 
-use PersonalProjects\SOLID\Model\SpecialVideo;
-use PersonalProjects\SOLID\Model\Course;
+use PersonalProjects\SOLID\Model\Watchable;
 
 class Watcher
 {
-    public function watch(Course $course)
+    public function watch(Watchable $course)
     {
-        foreach ($course->getVideos() as $video) {
-            $video->assistir();
-        }
-    }
-
-    public function watchSpecialVideo(SpecialVideo $specialVideo)
-    {
-        $specialVideo->watch();
+        $course->watch();
     }
 }

@@ -4,7 +4,7 @@ namespace PersonalProjects\SOLID\Model;
 
 use DomainException;
 
-class Course implements Scorable
+class Course implements Scorable, Watchable
 {
     private $videos;
     private $feedbacks;
@@ -38,5 +38,12 @@ class Course implements Scorable
     public function getScore(): int
     {
         return 100;
+    }
+
+    public function watch(): void
+    {
+        foreach ($this->getVideos() as $video) {
+            $video->watch();
+        }
     }
 }
