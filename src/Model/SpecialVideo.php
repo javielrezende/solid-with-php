@@ -14,7 +14,7 @@ class SpecialVideo extends Video implements Scorable
 
     public function getUrl(): string
     {
-        return str_replace(' ', '-', strtolower($this->category));
+        return 'http://videos.alura.com.br/' . str_replace(' ', '-', strtolower($this->category));
     }
 
     public function getScore(): int
