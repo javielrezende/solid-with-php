@@ -6,7 +6,6 @@ use DomainException;
 
 class Course
 {
-    private $name;
     private $videos;
     private $feedbacks;
 
@@ -17,13 +16,9 @@ class Course
         $this->feedbacks = [];
     }
 
-    public function getFeedback(int $score, ?string $comment): void
+    public function getFeedback(Feedback $feedback): void
     {
-        if ($score < 9 && empty($comment)) {
-            throw new DomainException('Comment required');
-        }
-
-        $this->feedbacks[] = [$score, $comment];
+        $this->feedbacks[] = $feedback;
     }
 
     public function addVideo(Video $video)
