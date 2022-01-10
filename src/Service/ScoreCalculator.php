@@ -2,19 +2,12 @@
 
 namespace PersonalProjects\SOLID\Service;
 
-use PersonalProjects\SOLID\Model\SpecialVideo;
-use PersonalProjects\SOLID\Model\Course;
+use PersonalProjects\SOLID\Model\Scorable;
 
 class ScoreCalculator
 {
-    public function getScore($content)
+    public function getScore(Scorable $content)
     {
-        if ($content instanceof Course) {
-            return 100;
-        } else if ($content instanceof SpecialVideo) {
-            return $content->duration() * 2;
-        } else {
-            throw new \DomainException('Only courses and special videos have scores');
-        }
+        $content->getScore();
     }
 }

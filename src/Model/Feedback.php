@@ -23,4 +23,14 @@ class Feedback
             throw new DomainException('Comment required');
         }
     }
+
+    public function getScore(): int
+    {
+        return $this->score;
+    }
+
+    public function getComment(): string|null
+    {
+        return $this->comment;
+    }
 }
